@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Card.css';
 import { CardType } from '../utils';
 
@@ -6,6 +6,11 @@ export default function Card(props: { data: CardType, updateScore: Function }) {
     const [showing, setShowing] = useState("front")
     const [guess, setGuess] = useState("")
     const [clickable, setClickable] = useState(true)
+    const [correctAnswer, setCorrectAnswer] = useState("")
+
+    useEffect(() => {
+        setCorrectAnswer(cleanAnswer(props.data.answer.toLowerCase()))
+    }, [])
 
     const handleClick = () => {
         if (clickable) {
@@ -18,7 +23,6 @@ export default function Card(props: { data: CardType, updateScore: Function }) {
     }
 
     const handleSubmit = () => {
-        const correctAnswer = cleanAnswer(props.data.answer.toLowerCase())
         const guessIsCorrect = guess.toLowerCase() == correctAnswer
         const value = props.data.value ? props.data.value : 0
         const scoreToAdd = guessIsCorrect ? value : value * -1
@@ -32,6 +36,7 @@ export default function Card(props: { data: CardType, updateScore: Function }) {
         substringsToRemove.forEach(substring => {
             answer.replace(substring, "")
         })
+        answer.replace("/'", "'")
         return answer
     }
 
@@ -39,6 +44,7 @@ export default function Card(props: { data: CardType, updateScore: Function }) {
         <div className="Card" >
             <div className={`card-front ${showing === "back" ? "hidden" : ""}`} onClick={handleClick} style={{ color: clickable ? "" : "white" }}>
                 <h4 className="card-value">{props.data.value}</h4>
+                <p className={`answer ${clickable ? "hidden" : ""}`}>Answer: {correctAnswer}</p>
             </div>
             <div className={`card-back ${showing === "front" ? "hidden" : ""}`}>
                 <p className="card-question">{props.data.question}</p>

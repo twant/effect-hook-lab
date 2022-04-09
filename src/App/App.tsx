@@ -12,10 +12,12 @@ const newGame = () => {
 function App() {
   const [score, setScore] = useState(0)
   const [data, setData] = useState({})
+  const [reset, setReset] = useState(false)
 
   const updateScore = (scoreToAdd: number) => {
     setScore(score + scoreToAdd)
   }
+
   useEffect(() => {
     callAPI()
       .then(data => {

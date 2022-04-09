@@ -10,11 +10,6 @@
     background: var( --blue)
 }
 
-.Card .hidden {
-    display: none;
-    visibility: hidden;
-}
-
 .Card .card-value {
     font-size: 3em;
     color: var(--gold);
@@ -38,4 +33,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.Card .answer {
+    font-size: 0.6em;
+    color: white;
 }

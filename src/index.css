@@ -13,3 +13,8 @@ code {
     --blue: #060CE9;
     --gold: #ffd700
 }
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
