@@ -1,0 +1,27 @@
+.Category {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Category .category-title {
+    color: white;
+    font-weight: bold;
+    background: var( --blue);
+    text-transform: uppercase;
+    font-size: 1em;
+    font-family: 'Allerta', sans-serif;
+    text-align: center;
+}
+
+.Category .title-card {
+    height: 10vh;
+    background: var(--blue);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: black solid 1vh;
+}
