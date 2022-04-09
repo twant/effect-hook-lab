@@ -23,21 +23,24 @@ export default function Card(props: { data: CardType, updateScore: Function }) {
     }
 
     const handleSubmit = () => {
-        const guessIsCorrect = guess.toLowerCase() == correctAnswer
+        // update the score based on whether the guess was correct
+        const guessIsCorrect = guess.toLowerCase().trim() == correctAnswer
         const value = props.data.value ? props.data.value : 0
         const scoreToAdd = guessIsCorrect ? value : value * -1
         props.updateScore(scoreToAdd)
+
+        // turn the card back to the front and make it not clickable
         setShowing("front")
         setClickable(false)
     }
 
     const cleanAnswer = (answer: string) => {
-        const substringsToRemove = ["<i>", "</i>", "a ", "the "]
+        const substringsToRemove = ["<i>", "</i>", '"', "<", "a ", "the "]
         substringsToRemove.forEach(substring => {
-            answer.replace(substring, "")
+            answer = answer.replace(substring, "")
         })
-        answer.replace("/'", "'")
-        return answer
+        answer = answer.replace("/'", "'").replace(`\'`, "'").replace(`\ '`, "'")
+        return answer.trim()
     }
 
     return (
