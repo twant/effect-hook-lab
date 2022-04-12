@@ -23,8 +23,7 @@ function App() {
         const cleanedData = cleanData(data)
         setData(cleanedData)
       })
-
-  })
+  }, [reset])
 
   return (
     <div className="App">
