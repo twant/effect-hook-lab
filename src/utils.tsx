@@ -1,17 +1,7 @@
 import data from "./sample_data.json"
 
-export type APIData = typeof data
-export const newGame = () => {
-    return callAPI()
-}
-
-
-
 export const callAPI = () => {
-    return fetch('https://jservice.io/api/random?count=100')
-        .then(data => data.json())
-        .then(data => { return data })
-        .catch(err => console.log(err))
+    //WRITE YOUR API CALL HERE
 }
 
 
@@ -52,3 +42,14 @@ export const cleanData = (data: APIData) => {
 const sampleDataType = cleanData(data)
 export type CategoryType = typeof sampleDataType
 export type CardType = typeof data[0]
+export type APIData = typeof data
+
+// use this function as a starter to clean answers before you check if the user's guess is correct! 
+const cleanAnswer = (answer: string) => {
+    const substringsToRemove = ["<i>", "</i>", '"', "<", "a ", "the "]
+    substringsToRemove.forEach(substring => {
+        answer = answer.replace(substring, "")
+    })
+    return answer.trim()
+}
+
