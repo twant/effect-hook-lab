@@ -14,18 +14,18 @@
 ## The Lab
 
 1. **Render the Board** - Get sample data to render using the pre-built components & cleaning methods. You can see the sample data in the `sample_data.json` file. Note that we have already built a cleaning function for you called `cleanData`, which is located in `utils.tsx`. While you are welcome to modify this function, you do not have to in order to get the application working. Because the cleaning function re-organizes the data, be sure to log the cleaned data so you understand the structure you'll be working with. The component structure is set up like **App > Board > Category > Card**
-    * **App** - we'll be making our API calls from this level of the application ![App](App.png)
-    * **Board** - the Board component holds all columns and rows of the game board. it receives the full, cleaned data structure as a prop. ![Board](Board.png)
-    * **Category** - the Category component holds a single column from the game board. It receives two props currently - the `name` of the category and an array of `cards` (each of which is an object containing information about a single clue). ![Category](Category.png)
-    * **Card** - the Card component is a single square of the game board. It receives a `data` prop, which is an object containing information about a single clue (one element from the `cards` array received by the Category component).
-    <br> ![Card Front](Card-Front.png) ![Card Back](Card-Back.png)
+    * **App** - we'll be making our API calls from this level of the application <br><img src="App.png" width="200px"/>
+    * **Board** - the Board component holds all columns and rows of the game board. it receives the full, cleaned data structure as a prop. <br><img src="Board.png" width="200px"/>
+    * **Category** - the Category component holds a single column from the game board. It receives two props currently - the `name` of the category and an array of `cards` (each of which is an object containing information about a single clue). <br><img src="Category.png" width="50px"/>
+    * **Card** - the Card component is a single square of the game board. It receives a `data` prop, which is an object containing information about a single clue (one element from the `cards` array received by the Category component). <br><img src="Card-Front.png" width="50px"/>
+    <br><img src="Card-Back.png" width="50px"/>
 1. **API Calls** - For this step, make a call to the [JService API](https://jservice.io) with in the `callAPI` function in the `utils.tsx` file. For now, get the data and console.log it to verify that you're retrieving the data. Make sure to call the `cleanData` function on the data you retrieve - the components are designed to take in the cleaned data only. We'll add this API data to our application in the next step.
 1. **Render API Data** - Get API data to render using useEffect hook. You'll know this is working when you get a different set of categories and clues every time you refresh the page!
 1. **New Game Button** - Add a "new game" button that refreshes the tiles to a new set of clues (by making a new call to the API).
 1. **Answer Box** - Add "answer" box and submit button. When a user submits an answer, check to see if it's right (using the answer property for that clue) and update the score appropriately.
-![card back with answer](card-back-with-input.png)
+<br><img src="card-back-with-input.png" width="100px"/>
 1. **Answer on the Card Front** - Ensure that clues that have already been answered now display the answer on the front of the card, and cannot be clicked again.
-![card front with answer](card-front-with-answer.png)
+<br><img src="card-front-with-answer.png" width="100px"/>
 
 ## Extensions
 
