@@ -4,8 +4,7 @@ export default function NewGameButton(props: { clickHandler: Function }) {
 
     return (
         <div className="NewGameButton">
-            <button>New Game</button>
-
+            <button onClick={() =>props.clickHandler()}>New Game</button>
         </div>
     )
 

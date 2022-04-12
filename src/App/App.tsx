@@ -15,6 +15,7 @@ function App() {
   }
   const newGame = () => {
     setReset(!reset)
+    return reset
   }
 
   useEffect(() => {
@@ -29,8 +30,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 className="title"> Welcome to Jeopardy! </h1>
-        <h2>Score: {score}</h2>
-        <NewGameButton clickHandler={() => newGame()} />
+        <div className="score-box">
+          <h2>Score: {score}</h2>
+          <NewGameButton clickHandler={() => newGame()} />
+        </div>
       </header>
       <Board updateScore={updateScore} categories={data} />
     </div>

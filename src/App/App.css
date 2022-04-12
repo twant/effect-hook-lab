@@ -9,3 +9,10 @@
     font-family: 'Allerta', sans-serif;
     text-transform: uppercase;
 }
+
+.App .score-box {
+    display: flex;
+    margin-bottom: 2vh;
+    justify-content: space-between;
+    align-items: center;
+}

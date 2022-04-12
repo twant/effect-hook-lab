@@ -1,46 +1,30 @@
-# Getting Started with Create React App
+# This is...JEOPARDY! (useEffect & APIs Lab)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![jeopardy board](Jeopardy.png)
 
-## Available Scripts
+## The Goal
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+* Clone this repository using `git clone`
+* `cd` into the lab
+* `npm install`
+* `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## The Lab
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. **Render the Board** - Get sample data to render using the pre-built components & cleaning methods
+1. **API Calls** - Make an API call and get data returned in console
+1. **Render API Data** - Get API data to render using useEffect hook
+1. **Answer Box** - Add "answer" box and submit button. When a user submits an answer, check to see if it's right (using the answer property for that clue) and update the score appropriately.
+1. **New Game Button** - Add a "new game" button that refreshes the tiles to a new set of clues (by making a new call to the API) - you'll need to use the Effect hook to make this happen!
 
-### `npm test`
+## Extensions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+* **Styling** - Update the styling to be even closer to the actual jeopardy game - we leave this up to your creativity!
+* **Responsiveness** - Update the styling to ensure the game is responsive on all standard screen sizes
+* **Data Cleaning** - Some clues have images that are not included, rendering the clues useless. Others have `<i>` tags, and still others have parenthtical annotations. All of these make the questions difficult to answer in this format. Implement advanced data cleaning to handle these exceptions. Consider using:
+  * Regex
+  * Fuzzy string matching algorithms/libraries
+* **One at a Time** - Currently, it is possible to open more than one clue at a time. Fix this bug so that only one clue can be open at any one time
+* **Turn-based** - Convert the game to a turn-based game so that multiple people can participate and answer questions. Keep score for each team/person.
