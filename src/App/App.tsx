@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Board from "../Board/Board"
 import { callAPI, cleanData } from '../utils';
 import NewGameButton from '../NewGameButton/NewGameButton';
-import data from "../sample_data.json"
 
 function App() {
   const [score, setScore] = useState(0)
@@ -13,6 +12,7 @@ function App() {
   const updateScore = (scoreToAdd: number) => {
     setScore(score + scoreToAdd)
   }
+
   const newGame = () => {
     setReset(!reset)
     return reset

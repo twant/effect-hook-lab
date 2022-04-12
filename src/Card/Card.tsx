@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Card.css';
-import { CardType } from '../utils';
+import { CardType, cleanAnswer } from '../utils';
 
 export default function Card(props: { data: CardType, updateScore: Function }) {
     const [showing, setShowing] = useState("front")
@@ -32,15 +32,6 @@ export default function Card(props: { data: CardType, updateScore: Function }) {
         // turn the card back to the front and make it not clickable
         setShowing("front")
         setClickable(false)
-    }
-
-    const cleanAnswer = (answer: string) => {
-        const substringsToRemove = ["<i>", "</i>", '"', "<", "a ", "the "]
-        substringsToRemove.forEach(substring => {
-            answer = answer.replace(substring, "")
-        })
-        answer = answer.replace("/'", "'").replace(`\'`, "'").replace(`\ '`, "'")
-        return answer.trim()
     }
 
     return (

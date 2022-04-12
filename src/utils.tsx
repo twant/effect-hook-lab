@@ -52,3 +52,11 @@ export const cleanData = (data: APIData) => {
 const sampleDataType = cleanData(data)
 export type CategoryType = typeof sampleDataType
 export type CardType = typeof data[0]
+
+export const cleanAnswer = (answer: string) => {
+    const substringsToRemove = ["<i>", "</i>", '"', "<", "a ", "the "]
+    substringsToRemove.forEach(substring => {
+        answer = answer.replace(substring, "")
+    })
+    return answer.trim()
+}
