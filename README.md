@@ -15,7 +15,7 @@
 
 1. **Render the Board** - Get sample data to render using the pre-built components & cleaning methods. You can see the sample data in the `sample_data.json` file. Note that we have already built a cleaning function for you called `cleanData`, which is located in `utils.tsx`. While you are welcome to modify this function, you do not have to in order to get the application working. Because the cleaning function re-organizes the data, be sure to log the cleaned data so you understand the structure you'll be working with. The component structure is set up like **App > Board > Category > Card**
     * **App** - we'll be making our API calls from this level of the application <br><img src="App.png" width="400px"/>
-    * **Board** - the Board component holds all columns and rows of the game board. it receives the full, cleaned data structure as a prop. <br><img src="Board.png" width=400px"/>
+    * **Board** - the Board component holds all columns and rows of the game board. it receives the full, cleaned data structure as a prop. <br><img src="Board.png" width="400px"/>
     * **Category** - the Category component holds a single column from the game board. It receives two props currently - the `name` of the category and an array of `cards` (each of which is an object containing information about a single clue). <br><img src="Category.png" width="150px"/>
     * **Card** - the Card component is a single square of the game board. It receives a `data` prop, which is an object containing information about a single clue (one element from the `cards` array received by the Category component). <br><img src="Card-Front.png" width="150px"/>
     <br><img src="Card-Back.png" width="150px"/>
