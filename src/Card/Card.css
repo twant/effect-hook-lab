@@ -39,3 +39,8 @@
     font-size: 0.6em;
     color: white;
 }
+
+.Card .answer-group {
+    display: flex;
+    justify-content: space-around;
+}

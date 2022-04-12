@@ -51,8 +51,10 @@ export default function Card(props: { data: CardType, updateScore: Function }) {
             </div>
             <div className={`card-back ${showing === "front" ? "hidden" : ""}`}>
                 <p className="card-question">{props.data.question}</p>
-                <input type="text" name="answer-box" onChange={(e) => handleChange(e)} />
-                <button onClick={() => handleSubmit()}>Guess!</button>
+                <div className="answer-group">
+                    <input type="text" name="answer-box" onChange={(e) => handleChange(e)} />
+                    <button onClick={() => handleSubmit()}>Guess!</button>
+                </div>
             </div>
         </div>
     )

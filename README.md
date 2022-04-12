@@ -16,8 +16,10 @@
 1. **Render the Board** - Get sample data to render using the pre-built components & cleaning methods
 1. **API Calls** - Make an API call and get data returned in console
 1. **Render API Data** - Get API data to render using useEffect hook
-1. **Answer Box** - Add "answer" box and submit button. When a user submits an answer, check to see if it's right (using the answer property for that clue) and update the score appropriately.
 1. **New Game Button** - Add a "new game" button that refreshes the tiles to a new set of clues (by making a new call to the API) - you'll need to use the Effect hook to make this happen!
+1. **Answer Box** - Add "answer" box and submit button. When a user submits an answer, check to see if it's right (using the answer property for that clue) and update the score appropriately.
+1. **Answer on the Card Front** - Ensure that clues that have already been answered now display the answer on the front of the card, and cannot be clicked again.
+![card front with answer](card-front-with-answer.png)
 
 ## Extensions
 
